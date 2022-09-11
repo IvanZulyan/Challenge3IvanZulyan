@@ -31,10 +31,9 @@ class LetterAdapter(private val letterList: ArrayList<Letter>): RecyclerView.Ada
             bundle.putSerializable("letter",Letter(item))
             wordFragment.arguments = bundle
             var activity : AppCompatActivity = holder.view.context as AppCompatActivity
-//            activity.supportFragmentManager.beginTransaction().replace(R.id.fc_main,wordFragment)
-//                .addToBackStack(null)
-//                .commit()
-            it.findNavController().navigate(R.id.action_letterFragment_to_wordFragment,bundle)
+            activity.supportFragmentManager.beginTransaction().replace(R.id.fc_main,wordFragment)
+                .addToBackStack(null)
+                .commit()
         }
     }
 
